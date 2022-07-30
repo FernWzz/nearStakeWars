@@ -35,7 +35,7 @@ This article will introduce how to use Tencent Cloud to create and run a near va
 - In order to ensure that the user has saved the mnemonic, the web wallet will randomly check a mnemonic;
 - Finally, enter the mnemonic, and you can successfully create a wallet. Note that the wallet address created on this page is for testing, and the near in this address is only for testing and has no actual value;
 
-![Alt](../picture/wallet.jpg)
+![Alt](https://github.com/FernWzz/nearStakeWars/blob/main/picture/wallet.jpg)
 ## 2. Create a validator
 - This tutorial uses ubuntu 20.04 to run the validator, to make sure the program uses the latest version, update the server with the command
 ```bash
@@ -50,12 +50,12 @@ PATH="$PATH"
 ````
 
 Use `node -v` to check node version and `npm -v` to check npm version
-![Alt](nodeVersion.jpg)
+![Alt](https://github.com/FernWzz/nearStakeWars/blob/main/picture/nodeVersion.jpg)
 - install near-cli
 ```bash
 sudo npm install -g near-cli
 ````
-![Alt](nearCliVersion.jpg)
+![Alt](https://github.com/FernWzz/nearStakeWars/blob/main/picture/nearCliVersion.jpg)
 Use `near proposals` to view all validators in the proposal state, `near validators current` to view all current validators, and `near validators next` to view nodes that will become validators
 
 - Check whether the server configuration meets the requirements, the recommended configuration for the test network is 4-Core CPU with AVX support/8GB DDR4/500G SSD
@@ -117,7 +117,7 @@ near login
 ````
 This step will generate a link, which needs to be opened in the browser. Those who use cloud services can open the link locally by modifying the ip address in the url to complete the authorization.
 
-![Alt](authorizeWallet.jpg)
+![Alt](https://github.com/FernWzz/nearStakeWars/blob/main/picture/authorizeWallet.jpg)
 - Create validator_key.json
 ```bash
 near generate-key <pool_id>
@@ -148,7 +148,7 @@ WantedBy=multi-user.target
 ```bash
 near call factory.shardnet.near create_staking_pool '{"staking_pool_id": "<pool id>", "owner_id": "<accountId>", "stake_public_key": "<public key>", "reward_fee_fraction": {"numerator" : 5, "denominator": 100}, "code_hash":"DD428g9eqLL8fWUxv8QSpVFzyHi1Qd16P8ephYCTmMSZ"}' --accountId="<accountId>" --amount=30 --gas=300000000000000
 ````
-![Alt](deploy.jpg)
+![Alt](https://github.com/FernWzz/nearStakeWars/blob/main/picture/deploy.jpg)
 
 - make a mortgage
 ```bash
@@ -173,7 +173,7 @@ sudo apt install curl jq
 # View monitor version
 curl -s http://127.0.0.1:3030/status | jq .version
 ````
-![Alt](check.jpg)
+![Alt](https://github.com/FernWzz/nearStakeWars/blob/main/picture/check.jpg)
 - View delegation and pledge information
 ```bash
 near view <your pool>.factory.shardnet.near get_accounts '{"from_index": 0, "limit": 10}' --accountId <accountId>.shardnet.near
